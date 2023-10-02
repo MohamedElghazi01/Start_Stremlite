@@ -28,7 +28,7 @@ if uploaded_file:
     # Save the uploaded PDF file to the 'folder' directory
   with open(os.path.join(folder, uploaded_file.name), "wb") as f:
     f.write(uploaded_file.getbuffer())
-    st.success(f"File '{uploaded_file.name}' has been successfully saved to '{output_folder}'") 
+    st.success(f"File '{uploaded_file.name}' has been successfully saved to '{folder}'") 
     
   loader = PyPDFDirectoryLoader(folder)
   docs = loader.load()
