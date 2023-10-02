@@ -1,3 +1,5 @@
 streamlit
 langchain==0.0.266
 pypdf
+os
+shutil
