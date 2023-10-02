@@ -34,7 +34,6 @@ if uploaded_file:
   docs = loader.load()
   for i in range(0,len(docs)):
     st.write(docs[i].page_content)
-    st.writ(docs[i].metadata['page']
     print("/n")
     if i==4:
       break;
