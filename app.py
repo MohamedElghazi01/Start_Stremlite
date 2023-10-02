@@ -38,26 +38,3 @@ if uploaded_file:
     if i==4:
       break;
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Display the content of the 'folder' directory
-st.subheader("Content of the 'folder' directory")
-file_list = os.listdir(output_folder)
-if file_list:
-    for filename in file_list:
-        st.write(filename)
-else:
-    st.info("The 'folder' directory is empty.")
-
-
-
