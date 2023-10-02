@@ -15,16 +15,16 @@ uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 if uploaded_file:
   # Display the uploaded file name and size
   st.write(f"Uploaded file: {uploaded_file.name} ({round(uploaded_file.size / 1024)} KB)")  
- # Check if the folder is not empty and delete the existing file
+  # Check if the folder is not empty and delete the existing file
   if os.listdir(folder):
-      st.warning("Warning: The 'folder' directory is not empty. Deleting the existing file...")
-      for filename in os.listdir(folder):
-          file_path = os.path.join(folder, filename)
-          try:
-              if os.path.isfile(file_path):
-                  os.unlink(file_path)
-          except Exception as e:
-              st.error(f"Error deleting the existing file: {e}")
+    st.warning("Warning: The 'folder' directory is not empty. Deleting the existing file...")
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            st.error(f"Error deleting the existing file: {e}")
     # Save the uploaded PDF file to the 'folder' directory
   with open(os.path.join(folder, uploaded_file.name), "wb") as f:
     f.write(uploaded_file.getbuffer())
@@ -35,6 +35,8 @@ if uploaded_file:
   for i in range(0,len(docs)):
     st.write(docs[i].page_content)
     print("/n")
+    if i==4:
+      break;
 
 
 
